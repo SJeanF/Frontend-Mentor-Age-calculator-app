@@ -1,0 +1,106 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins, serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 94%);
+    height: 100vh;
+}
+
+.container {
+    height: 400px;
+    width: 530px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 12px;
+    border-bottom-right-radius: 100px;
+}
+
+form {
+    height: 130px;
+    width: 65%;
+    margin-left: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    width: 100px;
+    height: 45px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid hsl(0, 0%, 86%);
+    border-radius: 5px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+form label {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 600;
+    color: hsl(0, 1%, 44%);
+}
+
+form button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(100%, 50%);
+    height: 63px;
+    padding: 16px;
+    background-color: hsl(259, 100%, 65%);
+    border-radius: 100%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: hsl(0, 0%, 8%);
+}
+
+.tempo {
+    position: relative;
+    width: 70%;
+    height: calc(100% - 130px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-left: 40px;
+    border-top: 1px solid hsl(0, 0%, 86%);
+}
+
+.tempo h3 {
+    font-size: 55px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+span {
+    color: hsl(259, 100%, 65%);
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

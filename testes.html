@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de Data</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#ano').val('2000')
+            // Função para validar a data
+            function validarData() {
+                // Obtendo os valores dos campos de dia, mês e ano
+                var dia = parseInt($("#dia").val());
+                var mes = parseInt($("#mes").val()) - 1; // Mês é zero-indexado
+                var ano = parseInt($("#ano").val());
+
+                console.log(`dia: ${dia}, mês: ${mes}, ano: ${ano}`)
+
+                // Criando um objeto Date com os valores fornecidos
+                var data = new Date(ano, mes, dia);
+
+                console.log(`dia na data completa ${data.getDate()}`)
+                console.log(`mes na data completa ${data.getMonth()}`)
+                console.log(`ano na data completa ${data.getFullYear()}`)
+
+                // Verificando se o dia é válido para o mês e ano fornecidos
+                if (data.getDate() !== dia || data.getMonth() !== mes || data.getFullYear() !== ano) {
+                    $("#resultado").text("Data inválida! O dia " + dia + " não existe no mês " + (mes + 1) + " do ano " + ano).css("color", "red");
+                    return false;
+                }
+
+                $("#resultado").text("Data válida!").css("color", "green");
+                return true;
+            }
+
+            // Chamando a função de validação quando o usuário alterar os campos
+            $("form").on("submit", function(e) {
+                e.preventDefault()
+                validarData();
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <h2>Validação de Data</h2>
+
+    <form>
+        <label for="dia">Dia:</label>
+        <input type="number" id="dia" min="1" max="31" required>
+        <br><br>
+
+        <label for="mes">Mês:</label>
+        <input type="number" id="mes" min="1" max="12" required>
+        <br><br>
+
+        <label for="ano">Ano:</label>
+        <input type="number" id="ano" min="1900" required>
+        <br><br>
+
+        <button type="submit">analisar</button>
+
+        <div id="resultado"></div> <!-- Onde o resultado será mostrado -->
+    </form>
+
+</body>
+</html>

@@ -34,6 +34,7 @@ form {
 form div {
     display: flex;
     flex-direction: column;
+    position: inherit;
 }
 
 form input {
@@ -78,6 +79,27 @@ form button {
 
 form button:hover {
     background-color: hsl(0, 0%, 8%);
+}
+
+form p {
+    color: hsl(0, 100%, 67%);
+    font-size: 10px;
+    text-align: center;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    width: 150px;
+
+}
+
+.fodeu-por-escrito {
+    color: hsl(0, 100%, 67%);
+}
+
+.fodeu {
+    border: 1px solid hsl(0, 100%, 67%);
 }
 
 .tempo {
